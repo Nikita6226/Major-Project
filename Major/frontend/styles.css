@@ -1,0 +1,161 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #f2ba01;
+    text-align: right;
+    font-size: 20px;
+    padding: 40px;
+    color: #fff;
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust as needed */
+    gap: 10px; /* Adjust the gap between images */
+  }
+
+  .grid-item img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px; /* Optional: Add rounded corners to images */
+  }
+
+.slideshow-container {
+    width: 600%;
+    overflow: hidden;
+    white-space: nowrap; /* Keep images in one line */
+  }
+
+  .slideshow-container img {
+    width: 600px; /* Adjust the width of each image */
+    height: auto;
+    display: inline-block;
+    transition: transform 30s step-end /*Add transition effect */
+  }
+
+  .slideshow-container {
+    max-width: 1100px; /* Adjust as needed */
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    scroll-margin-block-end: 50px; 
+}
+
+.slider {
+    display:flex;
+}
+
+.slide {
+    flex: 0 0 20%; /* Each slide takes up full width */
+}
+
+.slide img {
+    width: 300px;
+    height: auto;
+    margin: 0 10px;
+}
+
+ 
+
+ .slider {
+    animation: moveLeftToRight 20s linear infinite; 
+   
+}
+  
+.navbar img {
+    height: 68px; /* Set the height of the image */
+    width: auto; /* Allow the width to adjust automatically */
+    margin-right: 10px; /* Optional: Add some spacing between logo and text */
+    float: left; /* Align the image to the left */
+    padding: 0px;
+    transform: translateY(-38%);
+    position: relative; /* Position relative for absolute positioning of image */
+    overflow: hidden;
+    margin-right: 50px; 
+    animation: moveLeftToRight 8s linear infinite; 
+  }
+  @keyframes moveLeftToRight {
+    0% {
+      transform: translateX(-100%); /* Start position */
+    }
+    100% {
+      transform: translateX(100%); /* End position */
+    }
+  }
+
+
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ff0000;
+}
+
+section {
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+section h1 {
+    color: #ff5733;
+}
+
+footer {
+    background-color: #ff5733;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.chat-bot {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    border: none;
+    z-index: 1000; 
+    border-radius: 20px;
+    overflow: hidden;
+}
+.container { 
+    margin: 0 auto;
+    max-width: 2000px; /* or any other value */
+    padding: 20 0px; /* adding 20px of padding */
+} 
+
+ 
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+section img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
