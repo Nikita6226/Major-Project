@@ -1,0 +1,66 @@
+CREATE DATABASE  IF NOT EXISTS `Tadka_Tales` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `tadka_tales`;
+
+--
+-- Host: localhost    Database: tadka_tales
+-- ------------------------------------------------------
+
+
+DROP TABLE IF EXISTS `food_items`;
+
+CREATE TABLE `food_items` (
+  `item_id` int NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`item_id`)
+); 
+
+--
+-- Dumping data for table `food_items`
+--
+
+
+INSERT INTO `food_items` VALUES (1,'Samosa',15.00),(2,'Kachori',15.00),(3,'Pani-puri',15.00),(4,'Pav-Bhaji',80.00),(5,'Vada Pav',10.00),(6,'Pizza',110.00),(7,'Pasta',80.00),(8,'Garlic Bread',70.00),(9,'Tacos',90.00),(10,'Quesadilla',75.00),(11,'Tart',60.00),(12,'Cold coffee',90.00), (13,'Falooda',75.00),(14,'Sundae',55.00);
+
+
+--
+-- Table structure for table `order_tracking`
+--
+
+DROP TABLE IF EXISTS `order_tracking`;
+CREATE TABLE `order_tracking` (
+  `order_id` int NOT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`order_id`)
+);
+
+--
+-- Dumping data for table `order_tracking`
+--
+
+
+
+INSERT INTO `order_tracking` VALUES (40,'delivered'),(41,'in transit');
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+
+CREATE TABLE `orders` (
+  `order_id` int NOT NULL,
+  `item_id` int NOT NULL,
+  `quantity` int DEFAULT NULL,
+  `total_price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`order_id`,`item_id`),
+  KEY `orders_ibfk_1` (`item_id`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `food_items` (`item_id`)
+) ;
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` VALUES (40,1,2,30.00),(40,3,1,15.00),(41,4,3,320.00),(41,6,2,220.00),(41,9,4,360.00);
+
+--
